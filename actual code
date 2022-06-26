@@ -1,0 +1,301 @@
+import java.util.*;
+class restaurant_planning
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        
+        int rem,area;
+        rem=area=0;
+        
+        System.out.println(" \n This program is a hotel setup & management program for high profit using loan amount from the bank without investing a penny of the owner  \n profit = income-monthly expenditure(in INR) \n average time taken per table is according to NAFTA \n all the rates are in accordance with standard of the area in which the restaurant is located \n every year 30% income tax is paid to the government \n minimum estimation for profit is taken into consideration \n decent timings of the restaurant are 9 hours as follows : 12 p.m to 4 p.m & 7p.m to 12 a.m");
+        
+        
+        
+        System.out.println("decide the name of your restaurant tycoon");
+        String rt=sc.nextLine();
+
+        System.out.println("decide budget (depends upon location) ");
+        int b1=sc.nextInt();
+        
+        System.out.println("take a loan from bank for your complete budget");
+        System.out.println("loan amount =(inr)"+b1);
+        System.out.println("enter interest rate ");
+        double interestrate=sc.nextDouble();
+        
+        System.out.println("enter term (in years)");
+        double nt=sc.nextDouble();
+        
+        double loan=b1*interestrate*nt;
+        long loan1=(long)loan;
+        double loan2=(loan/nt);
+        long loan3=(long)loan2;
+        double loan4=loan2/12;
+        long loan5=(long)loan4;
+        
+        System.out.println("total amount of loan (including interest) to be paid at the end of "+nt+" years=(inr)"+loan1);
+        System.out.println("annual payment to the bank=(inr)"+loan3);
+        System.out.println("monthly payment (if decided)=(inr)"+loan5);
+        
+        
+        System.out.println("property price FORT-10 CR  LOWER PAREL-6 CR  VASHI-4 CR  BANDRA-8 CR  COLABA-10 CR:");
+        
+        System.out.println("decide location : 1-FORT  2-LOWER PAREL  3-VASHI  4-BANDRA  5-COLABA ");
+        int l=sc.nextInt();
+        
+        switch (l)
+        {
+            case 1:
+             area =100000000;
+            rem=b1-area;
+            System.out.println("your remaining budget= "+  rem);
+            System.out.println("your restaurant location : FORT");
+            
+            break;
+            
+            case 2:
+             area =60000000;
+             rem=b1-area;
+            System.out.println("your remaining budget= "+  rem);
+            System.out.println("your restaurant location : LOWER PAREL");
+            
+            break;
+            
+            case 3:
+             area =40000000;
+             rem =b1-area;
+            System.out.println("your remaining budget= "+  rem);
+            System.out.println("your restaurant location : VASHI");
+            
+            break;
+            
+            case 4:
+             area =80000000;
+             rem =b1-area;
+            System.out.println("your remaining budget= "+  rem);
+            System.out.println("your restaurant location : BANDRA");
+            
+            break;
+            
+            case 5:
+             area =100000000;
+             rem =b1-area;
+            System.out.println("your remaining budget= "+  rem);
+            System.out.println("your restaurant location : COLABA");
+            
+            break;
+            
+            default:
+            System.out.println("re-enter a location from options");
+            
+        }
+        int b3=rem;
+        
+        
+        System.out.println("set-up expenditure ");
+        
+        System.out.println("legal & license expenses");
+        int ll=sc.nextInt();//menu for setup
+        System.out.println("decide the number of tables");
+        int t=sc.nextInt();
+        System.out.println("construction cost of 1 whole table");
+        int tc=sc.nextInt();
+        System.out.println("kitchen setup and vessels");
+        int kitch=sc.nextInt();
+        System.out.println("Interior Decoration Expenditure");
+        int dp=sc.nextInt();
+        System.out.println("cutlery ");
+        int cutl=sc.nextInt();
+        System.out.println("Computers and other electronic gadgets ");
+        int eg=sc.nextInt();
+        //System.out.println("wiring and plumbing expenditure");
+        //int wp=sc.nextInt();
+        //System.out.println("chimney and exhaust expenditure");
+        //int cexh=sc.nextInt();
+        //System.out.println("air conditioning setting up");
+        //int ac=sc.nextInt();
+        
+        int setup=ll+eg+cutl+dp+kitch+(tc*t);
+        System.out.println("total setup expenditure ="+setup);
+        int b2=b3-setup;
+        System.out.println("remaining budget= "+b2);
+        
+        System.out.println("restaurant monthly expenditure from day1 :");
+        System.out.println(" number of senior Chef");
+        int ch=sc.nextInt();
+        System.out.println(" salary of senior chefs");
+        int salc=sc.nextInt();
+        System.out.println(" number of Assistant Chefs");
+        int ach=sc.nextInt();
+        System.out.println(" salary of Assistant chefs");
+        int salach=sc.nextInt();
+        System.out.println(" number of waiters");
+        int w=sc.nextInt();
+        System.out.println(" salary of waiters");
+        int salw=sc.nextInt();
+        System.out.println(" number of cleaners");
+        int cl=sc.nextInt();
+        System.out.println(" salary of cleaners");
+        int salcl=sc.nextInt();
+        System.out.println(" number of managers");
+        int m=sc.nextInt();
+        System.out.println(" salary of managers");
+        int salm=sc.nextInt();
+        System.out.println("monthly electricity bill");
+        int ebill=sc.nextInt();
+        System.out.println("raw food and beverage material");
+        int rfb=sc.nextInt();
+        System.out.println("monthly maintenance expenditure");
+        int mant=sc.nextInt();
+        System.out.println(" miscelanous expenses");
+        int mexp=sc.nextInt();
+        
+        int monthe=rfb+ebill+(salm*m)+(salw*w)+(salc*ch)+(cl*salcl)+(salach*ach)+mexp+mant;
+        System.out.println("monthly expenditure = "+monthe);
+        
+        System.out.println("weekdays income");
+        System.out.println("number of hours opened in a day");
+        int wh=sc.nextInt();
+        System.out.println("average time spent by customer on a table(in hours)");
+        int at=sc.nextInt();
+        System.out.println("average bill per table");//depends on location
+        int ab=sc.nextInt();
+        System.out.println("occupancy percentage");
+        double op=sc.nextDouble();
+        
+        double weekdayi=(wh*at)*(ab*t)*op;
+       
+        
+        System.out.println("weekday - one day earning = "+weekdayi);
+        double weekdaysi=weekdayi*4;
+        System.out.println("weekdays (monday to thursday) income)= "+weekdaysi);
+        
+        System.out.println("weekend's income");
+        System.out.println("number of hours opened in a day");
+        int wdh=sc.nextInt();
+        System.out.println("average time spent by customer on a table");
+        int at1=sc.nextInt();
+        System.out.println("average bill per table");//depends on location
+        int ab1=sc.nextInt();
+        System.out.println("occupancy percentage");
+        double op1=sc.nextDouble();
+        
+        double weekendi=(wdh*at1)*(ab1*t)*op1;
+        System.out.println("weekend- one day earning = "+weekendi);
+        double weekendsi=weekendi*3;
+        System.out.println("weekends (friday to sunday) income)= "+weekendsi);
+        double weektotal=weekendsi+weekdaysi;
+        System.out.println("whole week income =rs." + weektotal);
+        
+        
+        System.out.println("monthly income and profit(income-monthly expenditure) \n loan payment is paid annually");
+        System.out.println("january");
+        double inc1=(weekendsi*4)+(weekdaysi*4)+weekendsi;
+        double pr1=inc1-monthe;
+        System.out.println("january income=(inr) " +inc1);
+        System.out.println("january profit=(inr) " +pr1);
+        System.out.println("february");
+        double inc2=(weekendsi*4)+(weekdaysi*4);
+        double pr2=inc2-monthe;
+        System.out.println("february income=(inr) " +inc2);
+        System.out.println("february profit=(inr) " +pr2);
+        System.out.println("march");
+        double inc3=(weekendsi*4)+(weekdaysi*4)+weekendsi;
+        double pr3=inc3-monthe;
+        System.out.println("march income=(inr) " +inc3);
+        System.out.println("march profit=(inr) " +pr3);
+        System.out.println("april");
+        double inc4=(weekendsi*4)+(weekdaysi*4)+weekendsi-weekendi;
+        double pr4=inc4-monthe;
+        System.out.println("april income=(inr) " +inc4);
+        System.out.println("april profit=(inr) " +pr4);
+        System.out.println("may");
+        double inc5=(weekendsi*4)+(weekdaysi*4)+weekendsi;
+        double pr5=inc5-monthe;
+        System.out.println("may income=(inr) " +inc5);
+        System.out.println("may profit=(inr) " +pr5);
+        System.out.println("june");
+        double inc6=(weekendsi*4)+(weekdaysi*4)+weekendsi-weekendi;
+        double pr6=inc6-monthe;
+        System.out.println("june income=(inr) " +inc6);
+        System.out.println("june profit=(inr) " +pr6);
+        System.out.println("july");
+        
+        double inc7=(weekendsi*4)+(weekdaysi*4)+weekendsi;
+        double pr7=inc7-monthe;
+        System.out.println("july income=(inr) " +inc7);
+        System.out.println("july profit=(inr) " +pr7);
+        System.out.println("august");
+        double inc8=(weekendsi*4)+(weekdaysi*4)+weekendsi-weekendi;
+        double pr8=inc8-monthe;
+        System.out.println("august income=(inr) " +inc8);
+        System.out.println("august profit=(inr) " +pr8);
+        System.out.println("september");
+        double inc9=(weekendsi*4)+(weekdaysi*4)+weekendsi;
+        double pr9=inc9-monthe;
+        System.out.println("september income=(inr) " +inc9);
+        System.out.println("september profit =(inr) " +pr9);
+        System.out.println("october");
+        double inc10=(weekendsi*4)+(weekdaysi*4)+weekendsi-weekendi;
+        double pr10=inc10-monthe;
+        System.out.println("october income=(inr) " +inc10);
+        System.out.println("october profit=(inr) " +pr10);
+        System.out.println("november");
+        double inc11=(weekendsi*4)+(weekdaysi*4)+weekendsi-weekendi;
+        double pr11=inc11-monthe;
+        System.out.println("november income=(inr) " +inc11);
+        System.out.println("november profit=(inr) " +pr11);
+        System.out.println("december");
+        double inc12=(weekendsi*4)+(weekdaysi*4)+weekendsi;
+        double pr12=inc12-monthe;
+        System.out.println("december income=(inr) " +inc12);
+        System.out.println("december profit=(inr) " +pr12);
+        
+        double monthe1=monthe*12;
+        double annuali=inc1+inc2+inc3+inc4+inc5+inc6+inc7+inc8+inc9+inc10+inc11+inc12;
+      double annualp=pr1+pr2+pr3+pr4+pr5+pr6+pr7+pr8+pr9+pr10+pr11+pr12;
+       
+       double tax1=annuali*0.30;
+        
+       long money3=(long)annualp;
+       long money1=(long)annuali;
+       
+       
+        double annualneti=annuali-tax1-loan3 ;
+        long money2=(long)annualneti;
+        
+        System.out.println("remaining money after setup= "+b2);
+        System.out.println("annual income=(inr) " +money1);
+        System.out.println("annual net income(after deducting loan (annual) payment )=(inr) " +money2);
+        System.out.println("annual profit (without tax and loan payment)=(inr) " +money3);
+       //decide how much u want? 
+        System.out.println("decide the number of years you want to run the restaurant");
+        int nr=sc.nextInt();
+        
+        double annualneta;
+        annualneta=0.0d;
+        for(int i=1;i<=nr;i++)
+        {
+             
+             annualneta =annualneta+annualneti;
+             
+             
+            }
+         
+            long money=(long)annualneta;
+                 System.out.println("total net income after "+nr+" years= (inr)"+money);
+                 System.out.println("annual salary of the owner =(inr)"+money/nr);
+                 System.out.println("monthly salary of the owner=(inr)"+(money/nr)/12);
+                                  System.out.println("\n programmer : Fahad Faiz Kazi \n class : J1 \n roll no.16010521074");
+                 
+
+
+    }
+}
+        
+
+
+
+        
+        
+        
